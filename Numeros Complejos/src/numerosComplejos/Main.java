@@ -7,7 +7,8 @@
  * Objetivo del programa:
  * Representar un numero complejo en su forma binómica
  * apartir de 2 números reales empleando objetos
- * y encontrar su modulo y conjugado
+ * , encontrar su modulo y conjugado y sumar, restar, multiplicar
+ * y mostrar una línea
  */
 package numerosComplejos;
 
