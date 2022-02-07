@@ -19,6 +19,19 @@ public class Main {
     public static void main(String[] args) {
 
         NumeroComplejo Obj = new NumeroComplejo();
+        
+        int seleccionOp = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Ingresar cuantos números complejos (a+bi) desea sumar",
+                "Suma números complejos",
+                JOptionPane.QUESTION_MESSAGE));
+        Obj.SeleccionOp(seleccionOp);
+        //Obj.sumaDeNumeros();
+        //Obj.despliegueSuma();
+        
+        Obj.restaDeNumeros();
+        Obj.despliegueResta();
+
+      
 
         float ConvNumRealA = Float.parseFloat(JOptionPane.showInputDialog(null,
                 "Ingresar primer numero real",
@@ -29,7 +42,7 @@ public class Main {
                 "Ingresar segundo numero real",
                 "Números complejos",
                 JOptionPane.QUESTION_MESSAGE));
-
+        
         Obj.setNumRealA(ConvNumRealA);
         Obj.setNumRealB(ConvNumRealB);
 

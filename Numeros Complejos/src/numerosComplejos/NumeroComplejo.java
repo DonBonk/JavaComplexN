@@ -18,6 +18,11 @@ public class NumeroComplejo {
 
     private float numRealA;
     private float numRealB;
+    private int seleccionOp;
+    private double sum = 0;
+    private double sum2 = 0;
+    private double rest = 0;
+    private double rest2 = 0;
 
     public float getRealNumberA() {
         return numRealA;
@@ -26,6 +31,10 @@ public class NumeroComplejo {
     public float getRealNumberB() {
         return numRealB;
     }
+    
+    public float getSeleccionOp() {
+        return seleccionOp;
+    }
 
     public void setNumRealA(float newNumRealA) {
         this.numRealA = newNumRealA;
@@ -33,6 +42,10 @@ public class NumeroComplejo {
 
     public void setNumRealB(float newNumRealB) {
         this.numRealB = newNumRealB;
+    }
+    
+    public void SeleccionOp(int seleccionOp) {
+        this.seleccionOp = seleccionOp;
     }
 
     private double obtenerModuloNumCom() {
@@ -54,6 +67,52 @@ public class NumeroComplejo {
         }
     }
 
+    public void sumaDeNumeros() {
+        int i = 0;
+
+        double numberRealA[] = new double[seleccionOp];
+        double numberRealB[] = new double[seleccionOp];
+
+        while (i < seleccionOp) {
+            numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real a " + (i + 1) + ":",
+                    "Suma números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+
+            numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real b " + (i + 1) + ":",
+                    "Suma números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+            sum += numberRealA[i];
+            sum2 += numberRealB[i];
+            i++;
+        }
+    }
+    
+    public void restaDeNumeros() {
+        int i = 0;
+
+        double numberRealA[] = new double[seleccionOp];
+        double numberRealB[] = new double[seleccionOp];
+
+        while (i < seleccionOp) {        
+            numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real a " + (i + 1) + ":",
+                    "Resta números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+
+            numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real b " + (i + 1) + ":",
+                    "Resta números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+            rest =- numberRealA[i];
+            rest2 =- numberRealB[i];
+            i++;
+        }
+    }
+    
+    
+
     public void despliegueDeNumeroC() {
 
         if (numRealB < 0) {
@@ -71,6 +130,46 @@ public class NumeroComplejo {
                     + "\n" + "Conjugado de número complejo: "
                     + getRealNumberA() + obtenerConjugadoNumCom() + "i",
                     "Número complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    public void despliegueSuma() {
+        if (sum2 < 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Resultado: " + sum
+                    + ""
+                    + sum2
+                    + "i",
+                    "Numero Complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Resultado: " + sum
+                    + "+"
+                    + sum2
+                    + "i",
+                    "Numero Complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    public void despliegueResta() {
+        if (rest2 < 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Resultado: " + rest
+                    + ""
+                    + rest2
+                    + "i",
+                    "Numero Complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Resultado: " + rest
+                    + "+"
+                    + rest2
+                    + "i",
+                    "Numero Complejo",
                     JOptionPane.INFORMATION_MESSAGE);
         }
     }
