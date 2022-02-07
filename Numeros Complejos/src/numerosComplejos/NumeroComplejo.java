@@ -31,7 +31,7 @@ public class NumeroComplejo {
     public float getRealNumberB() {
         return numRealB;
     }
-    
+
     public float getSeleccionOp() {
         return seleccionOp;
     }
@@ -43,7 +43,7 @@ public class NumeroComplejo {
     public void setNumRealB(float newNumRealB) {
         this.numRealB = newNumRealB;
     }
-    
+
     public void SeleccionOp(int seleccionOp) {
         this.seleccionOp = seleccionOp;
     }
@@ -88,30 +88,36 @@ public class NumeroComplejo {
             i++;
         }
     }
-    
+
     public void restaDeNumeros() {
         int i = 0;
 
         double numberRealA[] = new double[seleccionOp];
         double numberRealB[] = new double[seleccionOp];
 
-        while (i < seleccionOp) {        
+        while (i < seleccionOp) {
             numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
                     "Ingresar número real a " + (i + 1) + ":",
-                    "Resta números complejos",
+                    "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
                     "Ingresar número real b " + (i + 1) + ":",
-                    "Resta números complejos",
+                    "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
-            rest =- numberRealA[i];
-            rest2 =- numberRealB[i];
+
+            rest -= numberRealA[i];
+            rest2 -= numberRealB[i];
+
+            if (i == 0)//Evita que la primera vez reste a 0
+            {
+                System.out.println(i);
+                rest = -1 * rest;
+                rest2 = -1 * rest2;
+            }
             i++;
         }
     }
-    
-    
 
     public void despliegueDeNumeroC() {
 
@@ -153,7 +159,7 @@ public class NumeroComplejo {
                     JOptionPane.INFORMATION_MESSAGE);
         }
     }
-    
+
     public void despliegueResta() {
         if (rest2 < 0) {
             JOptionPane.showMessageDialog(null,
