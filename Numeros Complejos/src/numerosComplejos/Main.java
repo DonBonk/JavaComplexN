@@ -57,7 +57,7 @@ public class Main {
             }
             case 3 -> {
                 int seleccionOp2 = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "Ingresar cuantos números complejos (a+bi) desea sumar",
+                        "Ingresar cuantos números complejos (a+bi) desea restar",
                         "Suma números complejos",
                         JOptionPane.QUESTION_MESSAGE));
                 Obj.SeleccionOp(seleccionOp2);

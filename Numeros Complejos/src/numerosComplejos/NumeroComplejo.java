@@ -75,12 +75,12 @@ public class NumeroComplejo {
 
         while (i < seleccionOp) {
             numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real a " + (i + 1) + ":",
+                    "Ingresar número real a " + " de z " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real b " + (i + 1) + ":",
+                    "Ingresar número real b " + " de z " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
             sum += numberRealA[i];
@@ -97,12 +97,12 @@ public class NumeroComplejo {
 
         while (i < seleccionOp) {
             numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real a " + (i + 1) + ":",
+                    "Ingresar número real a" + " de z " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real b " + (i + 1) + ":",
+                    "Ingresar número real b " + " de z " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
