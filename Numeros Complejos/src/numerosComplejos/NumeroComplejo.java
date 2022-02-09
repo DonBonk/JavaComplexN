@@ -23,6 +23,10 @@ public class NumeroComplejo {
     private double sum2 = 0;
     private double rest = 0;
     private double rest2 = 0;
+    private double multi = 0;
+    private double multi2 = 0;
+    double numberRealA[] = new double[2];
+    double numberRealB[] = new double[2];
 
     public float getRealNumberA() {
         return numRealA;
@@ -70,17 +74,14 @@ public class NumeroComplejo {
     public void sumaDeNumeros() {
         int i = 0;
 
-        double numberRealA[] = new double[seleccionOp];
-        double numberRealB[] = new double[seleccionOp];
-
-        while (i < seleccionOp) {
+        while (i < 2) {
             numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real a " + " de z " + (i + 1) + ":",
+                    "Ingresar número real a " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real b " + " de z " + (i + 1) + ":",
+                    "Ingresar número real b " + (i + 1) + ":",
                     "Suma números complejos",
                     JOptionPane.QUESTION_MESSAGE));
             sum += numberRealA[i];
@@ -92,18 +93,15 @@ public class NumeroComplejo {
     public void restaDeNumeros() {
         int i = 0;
 
-        double numberRealA[] = new double[seleccionOp];
-        double numberRealB[] = new double[seleccionOp];
-
-        while (i < seleccionOp) {
+        while (i < 2) {
             numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real a" + " de z " + (i + 1) + ":",
-                    "Suma números complejos",
+                    "Ingresar número real a " + (i + 1) + ":",
+                    "Resta números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
-                    "Ingresar número real b " + " de z " + (i + 1) + ":",
-                    "Suma números complejos",
+                    "Ingresar número real b " + (i + 1) + ":",
+                    "Resta números complejos",
                     JOptionPane.QUESTION_MESSAGE));
 
             rest -= numberRealA[i];
@@ -115,6 +113,33 @@ public class NumeroComplejo {
                 rest = -1 * rest;
                 rest2 = -1 * rest2;
             }
+            i++;
+        }
+    }
+
+    public void multiplicacionDeNumeros() {// multiplica números complejos
+        //double real2 = a.getReal();
+        //double image2 = a.getImage(); --------------------------------------
+        //double newReal = real*real2 - image*image2;
+        //double newImage = image*real2 + real*image2;
+        //Complex result = new Complex(newReal,newImage);
+        //return result;
+        //(a, b) * (c, d) = (a*c – b*d, a*d + b*c)
+        int i = 0;
+
+        while (i < 2) {
+            numberRealA[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real a " + (i + 1) + ":",
+                    "Suma números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+
+            numberRealB[i] = Double.parseDouble(JOptionPane.showInputDialog(null,
+                    "Ingresar número real b " + (i + 1) + ":",
+                    "Suma números complejos",
+                    JOptionPane.QUESTION_MESSAGE));
+            
+            multi = (numberRealA[0]*numberRealA[1])-(numberRealB[0]*numberRealB[1]);
+            multi2 = (numberRealA[0]*numberRealB[1])+(numberRealB[0]*numberRealA[1]);
             i++;
         }
     }
@@ -141,17 +166,24 @@ public class NumeroComplejo {
     }
 
     public void despliegueSuma() {
+
         if (sum2 < 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Resultado: " + sum
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)"
+                    + " + "
+                    + "(" + numberRealA[1] + "+" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + sum
                     + ""
                     + sum2
                     + "i",
                     "Numero Complejo",
                     JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Resultado: " + sum
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)"
+                    + " + "
+                    + "(" + numberRealA[1] + "+" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + sum
                     + "+"
                     + sum2
                     + "i",
@@ -162,18 +194,46 @@ public class NumeroComplejo {
 
     public void despliegueResta() {
         if (rest2 < 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Resultado: " + rest
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)" + " - "
+                    + "(" + numberRealA[1] + "-" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + rest
                     + ""
                     + rest2
                     + "i",
                     "Numero Complejo",
                     JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Resultado: " + rest
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)" + " - "
+                    + "(" + numberRealA[1] + "+" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + rest
                     + "+"
                     + rest2
+                    + "i",
+                    "Numero Complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    public void despliegueMultiplicacion() {
+        if (multi2 < 0) {
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)"
+                    + "(" + numberRealA[1] + "-" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + multi
+                    + ""
+                    + multi2
+                    + "i",
+                    "Numero Complejo",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "("
+                    + numberRealA[0] + " + " + numberRealB[0] + "i)"
+                    + "(" + numberRealA[1] + "+" + numberRealB[1] + "i)" + "\n"
+                    + "Resultado: " + multi
+                    + "+"
+                    + multi2
                     + "i",
                     "Numero Complejo",
                     JOptionPane.INFORMATION_MESSAGE);

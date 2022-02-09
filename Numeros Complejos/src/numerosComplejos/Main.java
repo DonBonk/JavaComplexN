@@ -12,8 +12,8 @@
  */
 package numerosComplejos;
 
-import javax.swing.JOptionPane;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Main {
 
@@ -26,12 +26,13 @@ public class Main {
                 + "1) Representar numero complejo en forma binomica" + "\n"
                 + "2) Sumar numeros complejos" + "\n"
                 + "3) Restar numeros complejos" + "\n"
-                + "4) Mostrar línea",
+                + "4) Restar numeros complejos" + "\n"
+                + "5) Mostrar línea",
                 "Números complejos",
                 JOptionPane.QUESTION_MESSAGE));
 
         switch (menuSeleccion) {
-            case 1 -> {
+            case 1: {
                 float ConvNumRealA = Float.parseFloat(JOptionPane.showInputDialog(null,
                         "Ingresar primer numero real",
                         "Números complejos",
@@ -45,41 +46,38 @@ public class Main {
                 Obj.setNumRealA(ConvNumRealA);
                 Obj.setNumRealB(ConvNumRealB);
                 Obj.despliegueDeNumeroC();
+                break;
             }
-            case 2 -> {
-                int seleccionOp = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "Ingresar cuantos números complejos (a+bi) desea sumar",
-                        "Suma números complejos",
-                        JOptionPane.QUESTION_MESSAGE));
-                Obj.SeleccionOp(seleccionOp);
+            case 2: {
                 Obj.sumaDeNumeros();
                 Obj.despliegueSuma();
+                break;
             }
-            case 3 -> {
-                int seleccionOp2 = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "Ingresar cuantos números complejos (a+bi) desea restar",
-                        "Suma números complejos",
-                        JOptionPane.QUESTION_MESSAGE));
-                Obj.SeleccionOp(seleccionOp2);
-
+            case 3: {
                 Obj.restaDeNumeros();
                 Obj.despliegueResta();
+                break;
+            }
+            case 4: {
+                Obj.multiplicacionDeNumeros();
+                Obj.despliegueMultiplicacion();
+                break;
             }
 
-            case 4 -> {
+            case 5: {
                 JFrame frame = new JFrame("Dibujar una línea");
                 frame.setSize(400, 400);
 
-                GUIFrame panel = new GUIFrame();
-                frame.add(panel);
+                //GUIFrame panel = new GUIFrame();
+                //frame.add(panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 frame.setVisible(true);
-            }
+                break;
 
-            default ->
+            }
+            default:
                 throw new AssertionError();
         }
-
     }
 }
