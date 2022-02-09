@@ -68,8 +68,8 @@ public class Main {
                 JFrame frame = new JFrame("Dibujar una línea");
                 frame.setSize(400, 400);
 
-                //GUIFrame panel = new GUIFrame();
-                //frame.add(panel);
+                GUIFrame panel = new GUIFrame();
+                frame.add(panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 frame.setVisible(true);
